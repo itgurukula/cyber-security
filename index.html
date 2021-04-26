@@ -1,33 +1,26 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: default
-title: Your Awesome Title
+layout: base
+title: Workshop Title
 page_name: home
+takeaways_text: |-
+  By having hands-on (instructor or self-paced), you will gain following knowledge:
+takeaways:
+  - Takeaway 1
+  - Takeaway 2
+  - Takeaway 3
+  - Takeaway 4
+notes:
+  The workshop will be conducted strictly based on the syllabus so that most of
+  the topics could be covered in time.
+  It is upto the instructor to respond to 'OUT of SYLLABUS' type queries of the student.
+prerequisites:
+  - Laptop or desktop with working computer knowledge
+  - Enthusiasm to learn
+  - Prerequisite 3
+  - Prerequisite 4
 ---
 
-<div class="home-page page-margin">
-  <div class="container">
-
-    {%- if site.posts.size > 0 -%}
-      <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-      <ul class="post-list list-unstyled p-0">
-        {%- for post in site.posts -%}
-        <li class="mb-4">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta mb-3">{{ post.date | date: date_format }}</span>
-          <h3 class="mt-2">
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
-        </li>
-        {%- endfor -%}
-      </ul>
-    {%- endif -%}
-  </div>
-</div>
+{% include episode_title.html %}
+{% include key_takeaways.html %}
+{% include prerequisites.html %}
+{% include syllabus.html %}
